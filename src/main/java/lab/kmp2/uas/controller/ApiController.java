@@ -32,7 +32,7 @@ public class ApiController {
     public List<Surat> getDaftarSurat() {
         List<Surat> data = suratRepo.findAll();
         for(int i=0; i<data.size(); i++) {
-            System.out.println(((Surat) data.get(i)).getNama());
+            System.out.println(((Surat) data.get(i)).getTanggal());
         }
         return suratRepo.findAll();
     }

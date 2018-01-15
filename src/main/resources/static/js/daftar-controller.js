@@ -25,8 +25,8 @@ suratApp.controller('DaftarController',
         //console.log(surat.perihal);
         $window.location.href = "edit-ui?nomer=" + surat.nomer +
                 "&tanggal=" + surat.tanggal + 
-                "&nama=" + buku.nama
-                "&perihal=" + surat.perihal +;
+                "&nama=" + buku.nama +
+                "&perihal=" + surat.perihal ;
     }
 
     $scope.hapus = function(surat) {
