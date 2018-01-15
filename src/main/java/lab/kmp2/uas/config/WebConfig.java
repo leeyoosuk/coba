@@ -18,8 +18,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public void addViewControllers(ViewControllerRegistry reg) {
         reg.addViewController("/")
         	.setViewName("test-angular");
-        reg.addViewController("/rekaman-surat")
-        	.setViewName("rekaman-surat");
+        reg.addViewController("/daftar-surat")
+        	.setViewName("daftar-surat");
         reg.addViewController("/form")
         	.setViewName("form-entry");
         reg.addViewController("/form-edit")

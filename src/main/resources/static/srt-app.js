@@ -4,4 +4,4 @@
  * and open the template in the editor.
  */
 
-var mhsApp = angular.module('SrtApp', []);
+var srtApp = angular.module('SrtApp', []);

@@ -1,9 +1,10 @@
-mhsApp.controller('FromController', function($scope, $http, $window){
+srtApp.controller('FromController', function($scope, $http, $window){
     $scope.simpan = function(){
-        //console.log("nim" + $scope.mhs.nim);
-        //console.log("nama" + $scope.mhs.nama);
-        //console.log("jurusan" + $scope.mhs.jurusan);
-        $http.post('/tambah data', $scope.mhs).then(sukses, gagal);
+        //console.log("nomer" + $scope.srt.nomer);
+        //console.log("tanggal" + $scope.srt.tanggal);
+        //console.log("nama" + $scope.srt.nama);
+        //console.log("perihal" + $scope.srt.perihal);
+        $http.post('/tambah data', $scope.srt).then(sukses, gagal);
         function sukses(response){
             $window.location.href = "/";    
         };
