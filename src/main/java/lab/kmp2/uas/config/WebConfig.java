@@ -13,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  *
  * @author yusuf
  */
+@Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
      @Override
     public void addViewControllers(ViewControllerRegistry reg) {

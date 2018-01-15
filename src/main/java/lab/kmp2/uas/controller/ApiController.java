@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package lab.kmp2.uas.controller;
 
 
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +25,7 @@ import org.springframework.security.web
  *
  * @author yusuf
  */
+@RestController
 public class ApiController {
     @Autowired
 	private SuratRepo suratRepo;

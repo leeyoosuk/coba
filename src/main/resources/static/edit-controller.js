@@ -1,5 +1,4 @@
-srtApp.controller('EditController', 
-		function($scope, $http, $window) {
+srtApp.controller('EditController', function($scope, $http, $window) {
 
 	$scope.simpan = function() {
 		$http.post('/tambah-data', $scope.srt).then(sukses, gagal);
