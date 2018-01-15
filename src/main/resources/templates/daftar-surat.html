@@ -1,54 +1,51 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-<head>
-	<title>Daftar Surat</title>
+    <head>
+        <title>Daftar Surat</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+        <script src="./js/angular.min.js"></script>
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"/>
 
-	<script src="/js/srt-app.js"></script>
-	<script src="/js/srt-controller.js"></script>
-</head>
-<body ng-app="SrtApp" class="container">
+        <script src="./js/buku-app.js"></script>
+        <script src="./js/daftar-controller.js"></script>
+    </head>
+    <body class="container" ng-app="SrtApp">
+        <div class="jumbotron">
+            <h1>Daftar Surat</h1>
+        </div>
 
-	<div class="jumbotron"> 
-		<h1>Daftar Surat</h1>
-	</div>
-	
-	<div ng-controller="SrtController">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>NOMOR</th>
-					<th>TANGGAL</th>
-					<th>NAMA</th>
-                                        <th>PERIHAL</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="srt in daftarSrt">
-					<td>{{ srt.nomor }}</td>
-					<td>{{ srt.tanggal }}</td>
-					<td>{{ srt.nama }}</td>
-                                        <td>{{ srt.perihal}}</td>
-                                        <td>
-                                            <button class="btn btn-info">
-                                                Ubah
-                                            </button>
-				</tr>
-			</tbody>
-                        <tfoot>
-                            <tr>
-                                <button class="btn "
-                            </tr>
-                        </tfoot>
-		</table>
-	</div>
-
-</body>
+        <div ng-controller="DaftarController">
+            <table class="table">
+                <thead>
+                    <th>NOME</th>
+                    <th>TANGGAL</th>
+                    <th>NAMA</th>
+                    <th>PERIHAL</th>    
+                </thead>
+                <tbody>
+                    <tr ng-repeat="surat in daftarSurat">
+                        <td>{{ surat.nomer }}</td>
+                        <td>{{ surat.tanggal }}</td>
+                        <td>{{ surat.nama }}</td>
+                        <td>{{ surat.judul_buku }}</td>
+                        <td>
+                            <button class="btn btn-warning"
+                                    ng-click="edit(surat)">
+                                Edit
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger"
+                                    ng-click="hapus(surat)">
+                                Hapus
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-primary"
+                    ng-click="tambah()">
+                Tambah
+            </button>
+        </div>
+    </body>
 </html>

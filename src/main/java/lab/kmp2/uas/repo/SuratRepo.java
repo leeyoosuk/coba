@@ -17,7 +17,8 @@ import lab.kmp2.uas.entity.Surat;
 
 @Repository
 public interface SuratRepo 
-        extends JpaRepository<Surat, String>{
+    extends JpaRepository<Surat, Integer> {
 
-    public List<Surat> findAll();
+    public void delete(int nomer);
+    
 }

@@ -58,26 +58,26 @@ public class SecurityConfig
 			.roles("ADMIN");
 	}
 
-	@Override
-	protected void configure(HttpSecurity http) 
-			throws Exception {
-		http
-			.authorizeRequests()
-				.antMatchers("/js/**").permitAll()
-				.antMatchers("/hapus-data/**").hasRole("ADMIN")
-				.antMatchers("/form-edit").hasRole("ADMIN")
-				.anyRequest().authenticated()
-			.and()
-				.formLogin().permitAll()
-			.and()
-				.addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class)
-				.csrf().csrfTokenRepository(csrfTokenRepository());
-	}
+	 @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeRequests()
+                .antMatchers("/bootstrap/**").permitAll()
+                .antMatchers("/js/**").permitAll()
+                .anyRequest().authenticated()
+            .and()
+                .formLogin().permitAll()
+            .and()
+                .logout()
+            .and()
+                .addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class)
+                .csrf().csrfTokenRepository(csrfTokenRepository());
+    }
 
-	private CsrfTokenRepository csrfTokenRepository() {
-		HttpSessionCsrfTokenRepository tokenRepo = new HttpSessionCsrfTokenRepository();
-		tokenRepo.setHeaderName("X-XSRF-TOKEN");
-		return tokenRepo;
-	}
+    private CsrfTokenRepository csrfTokenRepository() {
+        HttpSessionCsrfTokenRepository tokenRepo = new HttpSessionCsrfTokenRepository();
+        tokenRepo.setHeaderName("X-XSRF-TOKEN");
+        return tokenRepo;
+    }
 
 } 

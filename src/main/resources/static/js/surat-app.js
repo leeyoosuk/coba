@@ -1,0 +1,1 @@
+var suratApp = angular.module('SrtApp', []);

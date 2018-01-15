@@ -26,30 +26,29 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 @RestController
 public class ApiController {
     @Autowired
-	private SuratRepo suratRepo;
-	
-	@RequestMapping("/ambil-data")
-	public Map<String, Object> getData() {
-		Map<String, Object> result = new HashMap();
-		result.put("nama", "edang");
-		
-		return result;	
-	}
+    private SuratRepo suratRepo;
 
+    @RequestMapping("/daftar-surat")
+    public List<Surat> getDaftarSurat() {
+        List<Surat> data = suratRepo.findAll();
+        for(int i=0; i<data.size(); i++) {
+            System.out.println(((Surat) data.get(i)).getNama());
+        }
+        return suratRepo.findAll();
+    }
 
-	// -- untuk aplikasi mahasiswa
-	@RequestMapping("/list-surat")
-	public List<Surat> getListSrt() {
-		return suratRepo.findAll();
-	}
-        @RequestMapping(value = "/tambah", 
-                        method = RequestMethod.POST)
-        public void tambahData(@RequestBody Surat srt){
-        System.out.println("nomer" + srt.getNomer());
-        System.out.println("tanggal" + srt.getTanggal());
-        System.out.println("nama" + srt.getNama());
-        System.out.println("perihal" + srt.getPerihal());
-        suratRepo.save(srt);
-                }
+    @RequestMapping(value = "/api/tambah", method = RequestMethod.POST) 
+    public void tambahData(@RequestBody Surat surat) {
+        //System.out.println("nomer : " + surat.getNomer());
+        //System.out.println("tanggal :  "+ surat.getTanggal());
+        //System.out.println("nama : " + surat.getNama());
+        //System.out.println("perihal : " + surat.getPerihal());
+        suratRepo.save(surat);
+    }
+
+    @RequestMapping(value = "/api/hapus/{id}", method = RequestMethod.DELETE)
+    public void hapusData(@PathVariable("nomer") int nomer) {
+        suratRepo.delete(nomer);
+    }
     
 }

@@ -17,16 +17,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebConfig extends WebMvcConfigurerAdapter {
      @Override
     public void addViewControllers(ViewControllerRegistry reg) {
-        reg.addViewController("/login")
-        	.setViewName("login");
-        reg.addViewController("/")
-        	.setViewName("test-angular");
-        reg.addViewController("/daftar-surat")
-        	.setViewName("daftar-surat");
-        reg.addViewController("/form")
-        	.setViewName("form-entry");
-        reg.addViewController("/form-edit")
-        	.setViewName("form-edit");
+        reg.addViewController("/")        
+                .setViewName("daftar-surat");
+        reg.addViewController("/tambah-ui")
+                .setViewName("tambah");
+        reg.addViewController("/edit-ui")
+                .setViewName("edit");
     }
     
     
