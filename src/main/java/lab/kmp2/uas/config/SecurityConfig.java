@@ -52,10 +52,10 @@ public class SecurityConfig
 			.usersByUsernameQuery(qryUser)
 			.authoritiesByUsernameQuery(qryRole);
 
-		//auth.inMemoryAuthentication()
-		//	.withUser("endang")
-		//	.password("rahasia")
-		//	.roles("ADMIN");
+		auth.inMemoryAuthentication()
+			.withUser("endang")
+			.password("rahasia")
+			.roles("ADMIN");
 	}
 
 	@Override

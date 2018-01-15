@@ -38,7 +38,7 @@ srtApp.controller('SrtController',
                 //console.log("tanggal : " + srt.tanggal);
 		//console.log("nama : " + srt.nama);
 		//console.log("perihal : " + srt.perihal);
-		$http.delete('/hapus-data/' + srt.nim).then(sukses, gagal);
+		$http.delete('/hapus-data/' + srt.nomer).then(sukses, gagal);
 
 		function sukses(response) {
 			$scope.ambilDaftarSurat();			
