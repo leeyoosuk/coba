@@ -17,6 +17,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebConfig extends WebMvcConfigurerAdapter {
      @Override
     public void addViewControllers(ViewControllerRegistry reg) {
+        reg.addViewController("/login")
+        	.setViewName("login");
         reg.addViewController("/")
         	.setViewName("test-angular");
         reg.addViewController("/daftar-surat")
