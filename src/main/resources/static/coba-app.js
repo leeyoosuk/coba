@@ -1,0 +1,1 @@
+var cobaApp = angular.module('CobaApp',[]);

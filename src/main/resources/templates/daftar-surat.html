@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+	<title>Daftar Surat</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
+	<script src="/js/srt-app.js"></script>
+	<script src="/js/srt-controller.js"></script>
+</head>
+<body ng-app="SrtApp" class="container">
+
+	<div class="jumbotron"> 
+		<h1>Daftar Surat</h1>
+	</div>
+	
+	<div ng-controller="SrtController">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>NOMOR</th>
+					<th>TANGGAL</th>
+					<th>NAMA</th>
+                                        <th>PERIHAL</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="srt in daftarSrt">
+					<td>{{ srt.nomor }}</td>
+					<td>{{ srt.tanggal }}</td>
+					<td>{{ srt.nama }}</td>
+                                        <td>{{ srt.perihal}}</td>
+                                        <td>
+                                            <button class="btn btn-info">
+                                                Ubah
+                                            </button>
+				</tr>
+			</tbody>
+                        <tfoot>
+                            <tr>
+                                <button class="btn "
+                            </tr>
+                        </tfoot>
+		</table>
+	</div>
+
+</body>
+</html>

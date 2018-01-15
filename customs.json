@@ -1,0 +1,14 @@
+{
+    "elements": {},
+    "attributes": {
+        "div": {
+            "context": "h1"
+        },
+        "integrity": {
+            "context": "link"
+        },
+        "th:action": {
+            "context": "form"
+        }
+    }
+}
