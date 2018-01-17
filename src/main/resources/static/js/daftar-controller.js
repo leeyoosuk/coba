@@ -25,7 +25,7 @@ suratApp.controller('DaftarController',
         //console.log(surat.perihal);
         $window.location.href = "edit-ui?nomer=" + surat.nomer +
                 "&tanggal=" + surat.tanggal + 
-                "&nama=" + buku.nama +
+                "&nama=" + surat.nama +
                 "&perihal=" + surat.perihal ;
     }
 

@@ -1,14 +1,1 @@
-{
-    "elements": {},
-    "attributes": {
-        "div": {
-            "context": "h1"
-        },
-        "integrity": {
-            "context": "link"
-        },
-        "th:action": {
-            "context": "form"
-        }
-    }
-}
+{"elements":{},"attributes":{"div":{"context":"h1"},"integrity":{"context":"link"},"ng-model":{"context":"input"},"ng-click":{"context":"button"},"ng-controller":{},"th:action":{"context":"form"},"ng-repeat":{"context":"tr"},"ng-app":{}}}
